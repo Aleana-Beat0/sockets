@@ -1,10 +1,13 @@
 import socket
 import csv
 import json
+import os
 
-address = "127.0.0.1"
-port = 8000
+from dotenv import load_dotenv
+load_dotenv()
 
+address = os.getenv("SERVER_IP") # IP address
+port = int(os.getenv("SERVER_PORT")) # Port number
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
     server.bind((address, port))

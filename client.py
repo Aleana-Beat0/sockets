@@ -1,9 +1,14 @@
 # Built-in library of socket
 import socket
 import json
+import os
 
-address = "127.0.0.1"  # IP address
-port = 8000             # Port number
+from dotenv import load_dotenv
+load_dotenv()
+
+address = os.getenv("SERVER_IP") # IP address
+port = int(os.getenv("SERVER_PORT")) # Port number
+
 json_file_path = 'input.json'  # Path to the JSON file
 
 # Function to send the JSON file content to the server
