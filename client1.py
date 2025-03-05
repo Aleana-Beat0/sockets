@@ -6,9 +6,10 @@ load_dotenv()
 
 address = os.getenv("SERVER_IP")  # IP address
 port = int(os.getenv("SERVER_PORT"))  # Port number
+json_file = os.getenv("JSON_FILE")
 # Sample data that you want to send as JSON
 
-with open('trial.json', 'r' ) as json_file:
+with open(json_file, 'r' ) as json_file:
     data = json_file.read()
     json_data = json.dumps(data)
 

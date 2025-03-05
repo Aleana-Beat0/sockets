@@ -178,3 +178,5 @@ cython_debug/
 .env
 trial.py
 sockets-env
+
+.pytest_cache
